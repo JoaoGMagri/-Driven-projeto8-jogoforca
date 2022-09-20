@@ -1,0 +1,126 @@
+.app{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.topo{
+
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.direita{
+
+    margin-left: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+
+}
+
+.palavraEscondida{
+
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around; 
+
+}
+
+h1{
+
+    margin: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 70px;
+    font-weight: bold;
+
+}
+
+.botao{
+
+    width: 200px;
+    height: 60px;
+    background-color: green;
+    color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+
+    border: 0px;
+    border-radius: 5px;
+    margin-top: 55px;
+
+}
+.botao:hover{
+
+    background-color: rgb(11, 148, 11);
+
+}
+
+.teclado {
+
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+
+}
+
+.chute{
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.blocoTeclado,
+.chutar{
+
+    width: 50px;
+    height:50px;
+    margin: 11px;
+
+    background-color: aquamarine;
+    
+    color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid blue;
+    border-radius: 5px;
+
+}
+
+.chutar {
+
+    width: 80px;
+    height: 60px;
+
+}
+
+.descricao{
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin-right: 10px;
+
+}
+
+.campoDoChute {
+
+    width: 500px;
+    height: 60px;
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+
+}
