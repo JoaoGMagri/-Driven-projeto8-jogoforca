@@ -6,10 +6,13 @@ import imagem_4 from "../assets/forca4.png"
 import imagem_5 from "../assets/forca5.png"
 import imagem_6 from "../assets/forca6.png"
 
-import alfabeto from "./alfabeto"
-import palavras from "./palavras";
+import palavras from "./objetos/palavras";
 
+import PalavraEscondida from "./PalavraEscondida"
 import React, { useState } from "react";
+import Teclado from "./Teclado"
+import Chute from "./Chute"
+import Topo from "./Topo"
 
 export default function App() {
 
@@ -111,7 +114,7 @@ export default function App() {
     }
 
     function tentaticaDeChute() {
-        
+
         if (chute === "") {
             alert("Escreva algo");
         } else if (chute.normalize("NFD").replace(/[^a-zA-Z\s]/g, "") === palavraSelecionada.join("").normalize("NFD").replace(/[^a-zA-Z\s]/g, "")) {
@@ -132,92 +135,28 @@ export default function App() {
 
     return (
         <div className="app">
-            <div className="topo">
 
-                <div className="imagem">
+            <Topo
+                imagem={imagem}
+                comecarjogo={comacarJogo}
+            />
 
-                    <img src={imagem} alt="" />
+            <PalavraEscondida
+                palavraE={palavraEscondida}
+                classe={resultadoDoJogo}
+            />
 
-                </div>
+            <Teclado
+                func={clicarBotão}
+                habilitado={habilitado}
+            />
 
-                <div className="direita">
-
-                    <button
-                        onClick={comacarJogo}
-                        className="botao"
-                        type="Escolher Palavra">
-
-                        Escolher Palavra
-
-                    </button>
-
-                </div>
-
-            </div>
-
-            <div className="palavraEscondida">
-
-                {palavraEscondida.map((item, i) =>
-                    <h1
-                        className={resultadoDoJogo}
-                        key={i}>
-                        {item}
-                    </h1>)}
-
-            </div>
-
-            <div className="teclado">
-
-                {alfabeto.map((item, i) =>
-                    <button
-                        onClick={(() => clicarBotão(i, item))}
-                        className={
-                            habilitado.includes(i) ? (
-                                "blocoTeclado-Habilitado"
-                            ) : (
-                                "blocoTeclado-Desabilitado"
-                            )}
-                        disabled={
-                            habilitado.includes(i) ? (
-                                false
-                            ) : (
-                                true
-                            )}
-                        key={i}>
-                        {item.toUpperCase()}
-                    </button>)}
-
-            </div>
-
-            <div className="chute">
-
-                <span className="descricao">Já sei a palavra!</span>
-                <input
-                    disabled={
-                        (habilitado.length === 0) ? (
-                            true
-                        ) : (
-                            false
-                        )}
-                    placeholder="Chutar"
-                    value={chute}
-                    className="campoDoChute"
-                    onChange={(event) => setChute(event.target.value)}
-                />
-                <button
-                    disabled={
-                        (habilitado.length === 0) ? (
-                            true
-                        ) : (
-                            false
-                        )}
-                    className="chutar"
-                    onClick={tentaticaDeChute}
-                >
-                    Chutar
-                </button>
-
-            </div>
+            <Chute
+                funcChute={setChute}
+                funcChutar={tentaticaDeChute}
+                habilitado={habilitado}
+                chute={chute}
+            />
 
         </div >
 
