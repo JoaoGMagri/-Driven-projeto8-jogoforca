@@ -49,46 +49,25 @@ export default function App() {
 
     function comparaLetras(letra) {
 
-        let array = [];
         let novoArray = palavraEscondida;
-        let tentativaErrada = false;
+        let tentativaErrada = true;
 
         for (let i = 0; i < palavraSelecionada.length; i++) {
 
             if (letra === palavraSelecionada[i].normalize("NFD").replace(/[^a-zA-Z\s]/g, "")) {
-                array.push(i);
+                novoArray[i] = palavraSelecionada[i];
+                tentativaErrada = false;
             }
 
         }
-
-        for (let i = 0; i < palavraSelecionada.length; i++) {
-            for (let j = 0; j < array.length; j++) {
-
-                if (array[j] === i) {
-
-                    novoArray[i] = palavraSelecionada[i];
-
-                }
-
-            }
-        }
-
-        if (array.length === 0) {
-            tentativaErrada = true;
-        }
-
-        console.log(array)
         setPalavraEscondida([...novoArray]);
 
-        if (tentativaErrada === true) {
 
+        if (tentativaErrada === true) {
             setNum(num + 1);
             testeDeFimPerdendo();
-
         } else {
-
             testeDeFimGanhando();
-
         }
 
     }
