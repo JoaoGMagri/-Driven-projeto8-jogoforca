@@ -46,7 +46,7 @@ h1{
 
     width: 200px;
     height: 60px;
-    background-color: green;
+    background-color: rgb(38, 175, 96);
     color: white;
 
     font-family: Arial, Helvetica, sans-serif;
@@ -98,17 +98,17 @@ h1{
 
 .blocoTeclado-Habilitado{
 
-    background-color: aquamarine;
-    color: blue;
-    border: 2px solid blue;
+    background-color: rgb(224, 236, 243);
+    color: rgb(76, 112, 145);
+    border: 2px solid rgb(173, 203, 225);
 
 }
 
 .blocoTeclado-Desabilitado{
 
-    background-color: gray;
-    color: black;
-    border: 2px solid gray;
+    background-color: rgb(160, 170, 183);
+    color: rgba(0, 0, 0, 0.308);
+    border: 2px solid rgb(173, 203, 225);
 
 }
 
@@ -135,4 +135,12 @@ h1{
     border: 2px solid black;
     border-radius: 5px;
 
+}
+
+.verde {
+    color: green;
+}
+
+.vermelho {
+    color: red
 }
