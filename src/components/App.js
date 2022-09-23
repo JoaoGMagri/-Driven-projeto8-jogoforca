@@ -1,3 +1,5 @@
+//image
+import imagemLogo from "../assets/logoforca.png"
 import imagem_0 from "../assets/forca0.png"
 import imagem_1 from "../assets/forca1.png"
 import imagem_2 from "../assets/forca2.png"
@@ -6,8 +8,14 @@ import imagem_4 from "../assets/forca4.png"
 import imagem_5 from "../assets/forca5.png"
 import imagem_6 from "../assets/forca6.png"
 
+//style-components
+import styled from 'styled-components';
+import GlobalStyle from "./GlobalStyle/GlobalStyle"
+
+//Arrays-Objetos
 import palavras from "./objetos/palavras";
 
+//Componentes
 import PalavraEscondida from "./PalavraEscondida"
 import React, { useState } from "react";
 import Teclado from "./Teclado"
@@ -134,32 +142,71 @@ export default function App() {
     }
 
     return (
-        <div className="app">
+        <Container>
 
+            <GlobalStyle />
             <Topo
-                imagem={imagem}
+                imagem={imagemLogo}
                 comecarjogo={comacarJogo}
             />
 
-            <PalavraEscondida
-                palavraE={palavraEscondida}
-                classe={resultadoDoJogo}
-            />
+            <TelaDoJogo>
 
-            <Teclado
-                func={clicarBotão}
-                habilitado={habilitado}
-            />
+                <ImagemForca src={imagem} alt="" />
 
-            <Chute
-                funcChute={setChute}
-                funcChutar={tentaticaDeChute}
-                habilitado={habilitado}
-                chute={chute}
-            />
 
-        </div >
+                <PalavraEscondida
+                    palavraE={palavraEscondida}
+                    classe={resultadoDoJogo}
+                />
+
+                <Teclado
+                    func={clicarBotão}
+                    habilitado={habilitado}
+                />
+
+                <Chute
+                    funcChute={setChute}
+                    funcChutar={tentaticaDeChute}
+                    habilitado={habilitado}
+                    chute={chute}
+                />
+
+
+            </TelaDoJogo>
+
+        </Container >
 
     )
 
 }
+
+const Container = styled.div`
+    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+`
+
+const ImagemForca = styled.img`
+
+    width: 40%;
+    align-items: center;
+
+`
+
+const TelaDoJogo = styled.div`
+
+    margin-top: 20px;
+    border: 5px solid;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+`
+

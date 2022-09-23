@@ -1,18 +1,42 @@
+import styled from "styled-components"
+
 export default function PalavraEscondida(props) {
 
     return (
 
-        <div className="palavraEscondida">
+        <ContainerPalavraEscondida>
 
             {props.palavraE.map((item, i) =>
-                <h1
+                <Palavra
                     className={props.classe}
                     key={i}>
                     {item}
-                </h1>)}
+                </Palavra>)}
 
-        </div>
+        </ContainerPalavraEscondida>
 
     )
 
 }
+
+const ContainerPalavraEscondida = styled.div`
+
+    width: 100%;
+    font-weight: bold;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid;
+    border-radius: 50px
+
+`
+
+const Palavra = styled.h1 `
+
+    margin: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+
+`
