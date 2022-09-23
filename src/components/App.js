@@ -1,6 +1,3 @@
-import React, { useState } from "react";
-import alfabeto from "./alfabeto"
-import palavras from "./palavras";
 import imagem_0 from "../assets/forca0.png"
 import imagem_1 from "../assets/forca1.png"
 import imagem_2 from "../assets/forca2.png"
@@ -8,6 +5,11 @@ import imagem_3 from "../assets/forca3.png"
 import imagem_4 from "../assets/forca4.png"
 import imagem_5 from "../assets/forca5.png"
 import imagem_6 from "../assets/forca6.png"
+
+import alfabeto from "./alfabeto"
+import palavras from "./palavras";
+
+import React, { useState } from "react";
 
 export default function App() {
 
@@ -29,8 +31,9 @@ export default function App() {
         const array2 = [...habilitado, ...array];
         setHabilitado(array2);
         setResultadoDoJogo("");
-        setImagem(imagem_0)
-        const indexPalavra = Math.floor(Math.random() * palavras.length)
+        setImagem(imagem_0);
+        setNum(0);
+        const indexPalavra = Math.floor(Math.random() * palavras.length);
         setPalavraSelecionada(palavras[indexPalavra].split(""));
         setPalavraEscondida(Array(palavras[indexPalavra].length).fill("_"));
 
