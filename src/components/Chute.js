@@ -3,11 +3,11 @@ import styled from "styled-components"
 export default function Chute(props) {
 
     return (
-
         <ContainerChute>
 
             <span>Já sabe a palavra!</span>
             <input
+                data-identifier="type-guess"
                 disabled={
                     (props.habilitado.length === 0) ? (
                         true
@@ -19,6 +19,7 @@ export default function Chute(props) {
                 onChange={(event) => props.funcChute(event.target.value)}
             />
             <Botao
+                data-identifier="guess-button"
                 estilo={props.habilitado.length === 0}
                 disabled={
                     (props.habilitado.length === 0) ? (
@@ -32,7 +33,6 @@ export default function Chute(props) {
             </Botao>
 
         </ContainerChute>
-
     )
 
 }
@@ -59,7 +59,6 @@ const ContainerChute = styled.div`
         border-bottom-left-radius: 5px;
     }
 `
-
 const Botao = styled.button`
     background-color: ${props => props.estilo ? "rgb(160, 170, 183)" : "rgb(38, 175, 96)"};
     color: ${props => props.estilo ? "rgba(0, 0, 0, 0.308)" : "white"};

@@ -12,6 +12,7 @@ export default function Topo(props) {
                 </Logo>
 
                 <BotãoIniciarJogo
+                    {...props}
                     onClick={props.comecarjogo}
                     type="Escolher Palavra">
                     Escolher Palavra

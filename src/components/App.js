@@ -147,21 +147,24 @@ export default function App() {
             <Topo
                 imagem={imagemLogo}
                 comecarjogo={comecarJogo}
+                data-identifier="choose-word"
             />
 
             <TelaDoJogo>
 
-                <ImagemForca src={imagem} alt="" />
+                <ImagemForca data-identifier="game-image" src={imagem} alt="" />
 
 
                 <PalavraEscondida
                     palavraE={palavraEscondida}
                     classe={resultadoDoJogo}
+                    data-identifier="word"
                 />
 
                 <Teclado
                     func={clicarBotão}
                     habilitado={habilitado}
+                    data-identifier="letter"
                 />
 
                 <Chute
@@ -181,25 +184,18 @@ export default function App() {
 }
 
 const Container = styled.div`
-    
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
-
 `
-
 const ImagemForca = styled.img`
-
     width: 30%;
     align-items: center;
-
 `
-
 const TelaDoJogo = styled.div`
-
     width: 70%;
     margin-top: 90px;
     margin-bottom: 10px;
@@ -209,5 +205,4 @@ const TelaDoJogo = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 `
