@@ -11,12 +11,12 @@ export default function Topo(props) {
                     <img src={props.imagem} alt="" />
                 </Logo>
 
-                <BotãoIniciarJogo
+                <BotaoIniciarJogo
                     {...props}
                     onClick={props.comecarjogo}
                     type="Escolher Palavra">
                     Escolher Palavra
-                </BotãoIniciarJogo>
+                </BotaoIniciarJogo>
             
             </InteriorMenu>
         </MenuSuperio>
@@ -62,7 +62,7 @@ const Logo = styled.div`
     }
 
 `
-const BotãoIniciarJogo = styled.button`
+const BotaoIniciarJogo = styled.button`
 
     width: 150px;
     height: 45px;
@@ -78,6 +78,7 @@ const BotãoIniciarJogo = styled.button`
 
     &:hover{
         background-color: rgb(11, 148, 11); 
+        cursor: pointer;
     }
 
 `

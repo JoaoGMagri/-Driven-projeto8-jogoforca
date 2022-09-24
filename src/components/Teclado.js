@@ -43,4 +43,9 @@ const Tecla = styled.button`
 
     border-radius: 5px;
     border: 2px solid rgb(173, 203, 225);
+
+    &:hover{
+        background-color: ${props => props.estadoDoBotao ? "" : "rgb(173, 203, 225)"};
+        cursor: ${props => props.estadoDoBotao ? "" : "pointer"};
+    }
 `

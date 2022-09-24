@@ -32,7 +32,7 @@ export default function App() {
     const [chute, setChute] = useState("");
     const [num, setNum] = useState(0);
 
-    console.log(palavraSelecionada);
+    /* console.log(palavraSelecionada); */
 
     function comecarJogo() {
         let array = []

@@ -67,6 +67,9 @@ const Botao = styled.button`
     border: 1px solid black;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    &:hover{
+        cursor: ${props => props.estilo ? "" : "pointer"};
+    }
 ` 
 
 
