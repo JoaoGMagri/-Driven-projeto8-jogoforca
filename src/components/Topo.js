@@ -4,17 +4,20 @@ export default function Topo(props) {
 
     return (
         <MenuSuperio>
-            <Logo>
-                <h2>Jogo Da Forca </h2>
-                <img src={props.imagem} alt="" />
-            </Logo>
-            <BotãoIniciarJogo
-                onClick={props.comecarjogo}
-                type="Escolher Palavra">
+            <InteriorMenu>
+            
+                <Logo>
+                    <span>Jogo Da Forca </span>
+                    <img src={props.imagem} alt="" />
+                </Logo>
 
-                Escolher Palavra
-
-            </BotãoIniciarJogo>
+                <BotãoIniciarJogo
+                    onClick={props.comecarjogo}
+                    type="Escolher Palavra">
+                    Escolher Palavra
+                </BotãoIniciarJogo>
+            
+            </InteriorMenu>
         </MenuSuperio>
     )
 
@@ -28,32 +31,36 @@ const MenuSuperio = styled.div`
     border-bottom: 5px solid #808080;
 
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    right: 0;
+    top: 0;
+
+`
+const InteriorMenu = styled.div`
+
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 
 `
-
 const Logo = styled.div`
-    
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+    justify-content: flex-end;
 
     img{
-
         width: 50px;
-
     }
 
-    h2{
+    span{
         font-family: Arial, Helvetica, sans-serif;
         font-size: 50px;
     }
 
 `
-
 const BotãoIniciarJogo = styled.button`
 
     width: 150px;
@@ -73,4 +80,3 @@ const BotãoIniciarJogo = styled.button`
     }
 
 `
-

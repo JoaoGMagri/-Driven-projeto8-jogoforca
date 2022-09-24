@@ -18,7 +18,8 @@ export default function Chute(props) {
                 value={props.chute}
                 onChange={(event) => props.funcChute(event.target.value)}
             />
-            <button
+            <Botao
+                estilo={props.habilitado.length === 0}
                 disabled={
                     (props.habilitado.length === 0) ? (
                         true
@@ -28,7 +29,7 @@ export default function Chute(props) {
                 onClick={props.funcChutar}
             >
                 Chutar
-            </button>
+            </Botao>
 
         </ContainerChute>
 
@@ -41,7 +42,7 @@ const ContainerChute = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-bottom: 10px;
+    margin: 10px;
     
     span{
         font-family: Arial, Helvetica, sans-serif;
@@ -51,18 +52,22 @@ const ContainerChute = styled.div`
 
     input{
         width: 500px;
-        height: 60px;
+        height: 30px;
         font-size: 20px;
         border: 1px solid black;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
     }
-
-    button{
-        height: 64px;
-        border: 1px solid black;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-    }
-
 `
+
+const Botao = styled.button`
+    background-color: ${props => props.estilo ? "rgb(160, 170, 183)" : "rgb(38, 175, 96)"};
+    color: ${props => props.estilo ? "rgba(0, 0, 0, 0.308)" : "white"};
+    font-size: 15px;
+    height: 34px;
+    border: 1px solid black;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+` 
+
+

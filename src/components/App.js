@@ -34,7 +34,7 @@ export default function App() {
 
     console.log(palavraSelecionada);
 
-    function comacarJogo() {
+    function comecarJogo() {
         let array = []
         for (let i = 0; i < 26; i++) {
             array.push(i);
@@ -86,7 +86,7 @@ export default function App() {
     function testeDeFimGanhando() {
 
         if (palavraSelecionada.join("") === palavraEscondida.join("")) {
-            setResultadoDoJogo("verde");
+            setResultadoDoJogo("green");
             setHabilitado([]);
             setChute("");
         }
@@ -108,7 +108,7 @@ export default function App() {
 
             case 5:
                 setImagem(imagem_6);
-                setResultadoDoJogo("vermelho");
+                setResultadoDoJogo("red");
                 setPalavraEscondida([...palavraSelecionada]);
                 setHabilitado([]);
                 setNum(0);
@@ -118,21 +118,20 @@ export default function App() {
             default: break;
         }
 
-
     }
 
     function tentaticaDeChute() {
 
         if (chute === "") {
             alert("Escreva algo");
-        } else if (chute.normalize("NFD").replace(/[^a-zA-Z\s]/g, "") === palavraSelecionada.join("").normalize("NFD").replace(/[^a-zA-Z\s]/g, "")) {
-            setResultadoDoJogo("verde");
+        } else if (chute.toLowerCase().normalize("NFD").replace(/[^a-zA-Z\s]/g, "") === palavraSelecionada.join("").normalize("NFD").replace(/[^a-zA-Z\s]/g, "")) {
+            setResultadoDoJogo("green");
             setHabilitado([]);
             setPalavraEscondida([...palavraSelecionada]);
             setChute("");
         } else {
             setImagem(imagem_6);
-            setResultadoDoJogo("vermelho");
+            setResultadoDoJogo("red");
             setPalavraEscondida([...palavraSelecionada]);
             setHabilitado([]);
             setNum(0);
@@ -147,7 +146,7 @@ export default function App() {
             <GlobalStyle />
             <Topo
                 imagem={imagemLogo}
-                comecarjogo={comacarJogo}
+                comecarjogo={comecarJogo}
             />
 
             <TelaDoJogo>
@@ -188,19 +187,22 @@ const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 
 `
 
 const ImagemForca = styled.img`
 
-    width: 40%;
+    width: 30%;
     align-items: center;
 
 `
 
 const TelaDoJogo = styled.div`
 
-    margin-top: 20px;
+    width: 70%;
+    margin-top: 90px;
+    margin-bottom: 10px;
     border: 5px solid;
     border-radius: 20px;
     display: flex;
@@ -209,4 +211,3 @@ const TelaDoJogo = styled.div`
     align-items: center;
 
 `
-
