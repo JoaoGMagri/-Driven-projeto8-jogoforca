@@ -3,7 +3,6 @@ import styled from "styled-components"
 export default function PalavraEscondida(props) {
 
     return (
-
         <ContainerPalavraEscondida>
 
             {props.palavraE.map((item, i) =>
@@ -15,7 +14,6 @@ export default function PalavraEscondida(props) {
                 </Palavra>)}
 
         </ContainerPalavraEscondida>
-
     )
 
 }
